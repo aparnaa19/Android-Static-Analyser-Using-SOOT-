@@ -1,0 +1,5 @@
+digraph "onProviderDisabled" {
+  "this := @this: sample.locationtest.LocationTest" -> "$r0 := @parameter0: java.lang.String";
+  "$r0 := @parameter0: java.lang.String" -> "specialinvoke this.<sample.locationtest.LocationTest: void setMessage(java.lang.String)>('onProviderDisabled')";
+  "specialinvoke this.<sample.locationtest.LocationTest: void setMessage(java.lang.String)>('onProviderDisabled')" -> "return";
+}

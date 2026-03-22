@@ -1,0 +1,22 @@
+digraph "setMessage" {
+  "this := @this: sample.locationtest.LocationTest" -> "$r0 := @parameter0: java.lang.String";
+  "$r0 := @parameter0: java.lang.String" -> "$r7 = new java.text.SimpleDateFormat";
+  "$r7 = new java.text.SimpleDateFormat" -> "specialinvoke $r7.<java.text.SimpleDateFormat: void <init>(java.lang.String)>('yyyy/MM/dd HH:mm:ss')";
+  "specialinvoke $r7.<java.text.SimpleDateFormat: void <init>(java.lang.String)>('yyyy/MM/dd HH:mm:ss')" -> "$r8 = new java.util.Date";
+  "$r8 = new java.util.Date" -> "specialinvoke $r8.<java.util.Date: void <init>()>()";
+  "specialinvoke $r8.<java.util.Date: void <init>()>()" -> "$r1 = virtualinvoke $r7.<java.text.SimpleDateFormat: java.lang.String format(java.util.Date)>($r8)";
+  "$r1 = virtualinvoke $r7.<java.text.SimpleDateFormat: java.lang.String format(java.util.Date)>($r8)" -> "$r2 = virtualinvoke this.<sample.locationtest.LocationTest: android.view.View findViewById(int)>(2131034113)";
+  "$r2 = virtualinvoke this.<sample.locationtest.LocationTest: android.view.View findViewById(int)>(2131034113)" -> "$r3 = (android.widget.TextView) $r2";
+  "$r3 = (android.widget.TextView) $r2" -> "$r5 = new java.lang.StringBuilder";
+  "$r5 = new java.lang.StringBuilder" -> "specialinvoke $r5.<java.lang.StringBuilder: void <init>()>()";
+  "specialinvoke $r5.<java.lang.StringBuilder: void <init>()>()" -> "$r4 = virtualinvoke $r3.<android.widget.TextView: java.lang.CharSequence getText()>()";
+  "$r4 = virtualinvoke $r3.<android.widget.TextView: java.lang.CharSequence getText()>()" -> "$r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r4)";
+  "$r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.Object)>($r4)" -> "$r6 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>('line.separator')";
+  "$r6 = staticinvoke <java.lang.System: java.lang.String getProperty(java.lang.String)>('line.separator')" -> "$r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6)";
+  "$r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r6)" -> "$r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1)";
+  "$r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r1)" -> "$r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(':')";
+  "$r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>(':')" -> "$r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0)";
+  "$r5 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>($r0)" -> "$r0 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>()";
+  "$r0 = virtualinvoke $r5.<java.lang.StringBuilder: java.lang.String toString()>()" -> "virtualinvoke $r3.<android.widget.TextView: void setText(java.lang.CharSequence)>($r0)";
+  "virtualinvoke $r3.<android.widget.TextView: void setText(java.lang.CharSequence)>($r0)" -> "return";
+}

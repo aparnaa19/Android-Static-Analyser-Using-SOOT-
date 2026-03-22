@@ -1,0 +1,4 @@
+digraph "<init>" {
+  "this := @this: sample.locationtest.R$string" -> "specialinvoke this.<java.lang.Object: void <init>()>()";
+  "specialinvoke this.<java.lang.Object: void <init>()>()" -> "return";
+}

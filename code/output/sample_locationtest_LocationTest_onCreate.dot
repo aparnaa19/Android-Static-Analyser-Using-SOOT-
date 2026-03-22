@@ -1,0 +1,6 @@
+digraph "onCreate" {
+  "this := @this: sample.locationtest.LocationTest" -> "$r0 := @parameter0: android.os.Bundle";
+  "$r0 := @parameter0: android.os.Bundle" -> "specialinvoke this.<android.app.Activity: void onCreate(android.os.Bundle)>($r0)";
+  "specialinvoke this.<android.app.Activity: void onCreate(android.os.Bundle)>($r0)" -> "virtualinvoke this.<sample.locationtest.LocationTest: void setContentView(int)>(2130903040)";
+  "virtualinvoke this.<sample.locationtest.LocationTest: void setContentView(int)>(2130903040)" -> "return";
+}

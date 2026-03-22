@@ -1,0 +1,8 @@
+digraph "onPause" {
+  "this := @this: sample.locationtest.LocationTest" -> "specialinvoke this.<android.app.Activity: void onPause()>()";
+  "specialinvoke this.<android.app.Activity: void onPause()>()" -> "$r0 = this.<sample.locationtest.LocationTest: android.location.LocationManager lm>";
+  "$r0 = this.<sample.locationtest.LocationTest: android.location.LocationManager lm>" -> "virtualinvoke $r0.<android.location.LocationManager: void removeUpdates(android.location.LocationListener)>(this)";
+  "virtualinvoke $r0.<android.location.LocationManager: void removeUpdates(android.location.LocationListener)>(this)" -> "this.<sample.locationtest.LocationTest: android.location.LocationManager lm> = null";
+  "this.<sample.locationtest.LocationTest: android.location.LocationManager lm> = null" -> "staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>('LocationTest', 'removeUpdates')";
+  "staticinvoke <android.util.Log: int d(java.lang.String,java.lang.String)>('LocationTest', 'removeUpdates')" -> "return";
+}

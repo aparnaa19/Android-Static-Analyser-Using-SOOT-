@@ -1,0 +1,14 @@
+digraph "onLocationChanged" {
+  "this := @this: sample.locationtest.LocationTest" -> "$r0 := @parameter0: android.location.Location";
+  "$r0 := @parameter0: android.location.Location" -> "specialinvoke this.<sample.locationtest.LocationTest: void setMessage(java.lang.String)>('onLocationChanged')";
+  "specialinvoke this.<sample.locationtest.LocationTest: void setMessage(java.lang.String)>('onLocationChanged')" -> "$r1 = new java.lang.StringBuilder";
+  "$r1 = new java.lang.StringBuilder" -> "specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>('lat=')";
+  "specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>('lat=')" -> "$d0 = virtualinvoke $r0.<android.location.Location: double getLatitude()>()";
+  "$d0 = virtualinvoke $r0.<android.location.Location: double getLatitude()>()" -> "$r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(double)>($d0)";
+  "$r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(double)>($d0)" -> "$r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>('&lon=')";
+  "$r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(java.lang.String)>('&lon=')" -> "$d0 = virtualinvoke $r0.<android.location.Location: double getLongitude()>()";
+  "$d0 = virtualinvoke $r0.<android.location.Location: double getLongitude()>()" -> "$r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(double)>($d0)";
+  "$r1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(double)>($d0)" -> "$r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>()";
+  "$r2 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.String toString()>()" -> "specialinvoke this.<sample.locationtest.LocationTest: void setMessage(java.lang.String)>($r2)";
+  "specialinvoke this.<sample.locationtest.LocationTest: void setMessage(java.lang.String)>($r2)" -> "return";
+}
